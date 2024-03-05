@@ -3,8 +3,7 @@ config="configs/inference/config_both.yaml"
 ckpt='./checkpoints/motionctrl.pth'
 
 condtype='both'
-condtype='object_motion'
-condtype='camera_motion'
+
 
 cond_dir="examples/"
 
