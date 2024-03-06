@@ -193,11 +193,16 @@ def run_inference(args, gpu_num, gpu_no):
     ## model config
     config = OmegaConf.load(args.base)
     model_config = config.pop("model", OmegaConf.create())
+    print('config   :  ' )
+    print(model_config)
     model = instantiate_from_config(model_config)
     model = model.cuda(gpu_no)
+    print('------------ model  - ------- - -------')
+    print(model ) 
     assert os.path.exists(args.ckpt_path), f"Error: checkpoint {args.ckpt_path} Not Found!"
     print(f"Loading checkpoint from {args.ckpt_path}")
     model = load_model_checkpoint(model, args.ckpt_path, args.adapter_ckpt)
+    
     model.eval()
 
     ## run over data
