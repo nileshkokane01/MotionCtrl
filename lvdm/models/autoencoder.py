@@ -49,6 +49,7 @@ class AutoencoderKL(pl.LightningModule):
             self.init_from_ckpt(ckpt_path, ignore_keys=ignore_keys)
         if self.test:
             self.init_test()
+        print('AutoEncodedKL initialized successfully ')
     
     def init_test(self,):
         self.test = True

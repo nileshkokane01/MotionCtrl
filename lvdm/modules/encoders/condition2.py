@@ -204,6 +204,7 @@ class FrozenOpenCLIPEmbedder(AbstractEncoder):
             self.layer_idx = 1
         else:
             raise NotImplementedError()
+        print('FrozenOpenCLIPEmbedder initialized successfully')
 
     def freeze(self):
         self.model = self.model.eval()

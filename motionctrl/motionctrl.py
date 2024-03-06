@@ -57,6 +57,7 @@ class MotionCtrl(LatentDiffusion):
                     bound_method = spatial_forward_BasicTransformerBlock.__get__(
                         _module, _module.__class__)
                     setattr(_module, '_forward', bound_method)
+        print('initialization for MotionCtrl successful')
 
     def get_traj_features(self, extra_cond):
         b, c, t, h, w = extra_cond.shape

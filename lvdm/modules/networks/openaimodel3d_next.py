@@ -533,6 +533,7 @@ class UNetModel(nn.Module):
             nn.SiLU(),
             zero_module(conv_nd(dims, model_channels, out_channels, 3, padding=1)),
         )
+        print('Unet initialized successfully ')
 
     def forward(self, x, timesteps, context=None, y=None, features_adapter=None, is_imgbatch=False,  **kwargs):
         b,_,t,_,_ = x.shape

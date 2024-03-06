@@ -86,6 +86,7 @@ class Adapter(nn.Module):
                         ResnetBlock(channels[i], channels[i], down=False, ksize=ksize, sk=sk, use_conv=use_conv))
         self.body = nn.ModuleList(self.body)
         self.conv_in = nn.Conv2d(cin, channels[0], 3, 1, 1)
+        print('Adapter intitialization successful')
 
     def forward(self, x):
         # unshuffle
