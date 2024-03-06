@@ -34,7 +34,8 @@ def instantiate_from_config(config):
         elif config == "__is_unconditional__":
             return None
         raise KeyError("Expected key `target` to instantiate.")
-    print(f'initializating {config['target']}')
+    name_of_function=  config['target']
+    print(f'initializating {name_of_function}')
     return get_obj_from_str(config["target"])(**config.get("params", dict()))
 
 
