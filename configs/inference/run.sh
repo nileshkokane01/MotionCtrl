@@ -14,7 +14,7 @@ fi
 
 save_dir=$res_dir/$condtype'_seed'$seed
 
-use_ddp=0
+use_ddp=1
 
 if [ $use_ddp == 0 ]; then
 python 'main/evaluation/motionctrl_inference.py' \
