@@ -189,10 +189,12 @@ class FrozenOpenCLIPEmbedder(AbstractEncoder):
         super().__init__()
         assert layer in self.LAYERS
         # model, _, _ = open_clip.create_model_and_transforms(arch, device=torch.device('cpu'), pretrained='/apdcephfs/share_1290939/richardxia/PretrainedCache/hub/models--laion--CLIP-ViT-H-14-laion2B-s32B-b79K/snapshots/719803079cc9d41bf3ad0a0916fa24e778320c50/open_clip_pytorch_model.bin')
+        print('coming here successfully')
         model, _, _ = open_clip.create_model_and_transforms('hf-hub:laion/CLIP-ViT-H-14-laion2B-s32B-b79K')
+        print('ling 196')
         del model.visual
         self.model = model
-
+       
         self.device = device
         self.max_length = max_length
         if freeze:
