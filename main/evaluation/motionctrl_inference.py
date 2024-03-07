@@ -349,11 +349,13 @@ def get_parser():
 if __name__ == '__main__':
     now = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
     print("@CoLVDM cond-Inference: %s"%now)
-    parser = get_parser()
-    args, unkown = parser.parse_known_args()
+  #  parser = get_parser()
+#   args, unkown = parser.parse_known_args()
+
+    args =  argparse.Namespace(savedir='./outputs/', ckpt_path='./checkpoints/motionctrl.pth', adapter_ckpt=None, base='configs/inference/config_both.yaml', condtype='both', prompt_dir=None, n_samples=5, ddim_steps=50, ddim_eta=1.0, bs=1, height=256, width=256, unconditional_guidance_scale=7.5, unconditional_guidance_scale_temporal=None, seed=1234, cond_T=800, save_imgs=False, cond_dir='examples/')
     # args = parser.parse_args()
     print('printing args :  ')
     print(args)
     seed_everything(args.seed)
     rank, gpu_num = 0, 1
-    run_inference(args, gpu_num, rank)
+    run_inference(args, gpu_num, rank) 
