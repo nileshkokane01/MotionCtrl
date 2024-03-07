@@ -97,7 +97,7 @@ model:
         lossconfig:
           target: torch.nn.Identity
     cond_stage_config:
-      target: FrozenOpenCLIPEmbedder
+      target: lvdm.modules.encoders.condition2.FrozenOpenCLIPEmbedder
       params:
         freeze: true
         layer: penultimate
