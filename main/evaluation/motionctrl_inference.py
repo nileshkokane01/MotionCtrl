@@ -352,7 +352,8 @@ if __name__ == '__main__':
     parser = get_parser()
     args, unkown = parser.parse_known_args()
     # args = parser.parse_args()
-
+    print('printing args :  ')
+    print(args)
     seed_everything(args.seed)
     rank, gpu_num = 0, 1
     run_inference(args, gpu_num, rank)
