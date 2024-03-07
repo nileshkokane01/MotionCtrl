@@ -537,8 +537,8 @@ class LatentDiffusion(DDPM):
 
     def instantiate_cond_stage(self, config):
         if not self.cond_stage_trainable:
-            #model = instantiate_from_config(config)
-            model  =FrozenOpenCLIPEmbedder(config)
+            model = instantiate_from_config(config)
+            #model  =FrozenOpenCLIPEmbedder(config)
             self.cond_stage_model = model.eval()
             self.cond_stage_model.train = disabled_train
             for param in self.cond_stage_model.parameters():
