@@ -8,7 +8,8 @@ from transformers import (CLIPTextModel, CLIPTokenizer, T5EncoderModel,
 
 from lvdm.common import autocast
 from utils.utils import count_params
-
+import os
+os.environ["HF_TOKEN"] = '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'
 
 class AbstractEncoder(nn.Module):
     def __init__(self):
