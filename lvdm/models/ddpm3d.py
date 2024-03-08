@@ -1082,5 +1082,5 @@ class DiffusionWrapper(pl.LightningModule):
             out = self.diffusion_model(xc, t, context=cc, s=s, y=c_adm)
         else:
             raise NotImplementedError()
-
+        breakpoint()
         return out
