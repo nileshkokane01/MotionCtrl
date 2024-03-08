@@ -35,6 +35,8 @@ def load_model_checkpoint(model, ckpt, adapter_ckpt=None):
     if adapter_ckpt:
         ## main model
         state_dict = torch.load(ckpt, map_location="cpu")
+        print('model dicts ----  ' )
+        print(state_dict)
         if "state_dict" in list(state_dict.keys()):
             state_dict = state_dict["state_dict"]
             result = model.load_state_dict(state_dict, strict=False)
