@@ -195,6 +195,7 @@ def run_inference(args, gpu_num, gpu_no):
     model_config = config.pop("model", OmegaConf.create())
     print('config   :  ' )
     print(model_config)
+    breakpoint()
     model = instantiate_from_config(model_config)
     model = model.cuda(gpu_no)
     print('------------ model  - ------- - -------')
@@ -250,7 +251,9 @@ def run_inference(args, gpu_num, gpu_no):
     save_name_list_rank = [save_name_list[i] for i in indices]
     
     start = time.time() 
+    breakpoint()
     for idx, indice in tqdm(enumerate(range(0, len(prompt_list_rank), args.bs)), desc='Sample Batch'):
+        breakpoint()
         prompts = prompt_list_rank[indice:indice+args.bs]
         camera_poses = None if camera_pose_list_rank is None else camera_pose_list_rank[indice:indice+args.bs]
         trajs = None if traj_list_rank is None else traj_list_rank[indice:indice+args.bs]

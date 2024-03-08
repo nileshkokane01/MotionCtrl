@@ -343,7 +343,7 @@ class UNetModel(nn.Module):
                  temporal_transformer_depth=1
                 ):
         super(UNetModel, self).__init__()
-        breakpoint()
+        
         if num_heads == -1:
             assert num_head_channels != -1, 'Either num_heads or num_head_channels has to be set'
         if num_head_channels == -1:
